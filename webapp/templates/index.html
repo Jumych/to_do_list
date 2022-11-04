@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>To do List</h1>
+    {% for article in articles %}
+        <h2>{{ article.title }}</h2>
+        <p>{{ article.status }} - {{ article.get_status_display }}</p>
+        <p><a href="/article/?id={{ article.id }}">Подробнее...</a></p>
+        <p><a href="articles/add/{{ new_article }}">Добавить новую задачу</a></p>
+    {% endfor %}
+</body>
+</html>
